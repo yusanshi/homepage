@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Sanshi Yu
+title: Sanshi Yu [WIP] # TODO remove WIP
 email: meet.leiyu@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -59,13 +59,30 @@ plugins:
 
 author:
   name: "Sanshi Yu"
-  avatar: "/assets/images/bio-photo.jpg"
+  avatar: "/assets/images/bio-photo.jpg" # TODO change photo
   bio: "My awesome biography constrained to a sentence or two goes here."
   links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "{{ site.email }}" # TODO (with/without ""?)
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/yusanshi"
+      url: "https://github.com/" # TODO (link with/without username?)
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/yusanshi/"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?user=dE3GoNsAAAAJ"
+    - label: "ResearchGate"
+      icon: "fab fa-fw fa-researchgate"
+      url: "https://www.researchgate.net/profile/Sanshi-Lei-Yu"
+    - label: "ORCID"
+      icon: "ai ai-orcid-square ai-fw"
+      url: "https://orcid.org/0000-0001-9393-1397"
+      # TODO change icon from fa?
 
+# TODO remove footer?
 footer:
   links:
     - label: "GitHub"
@@ -98,3 +115,5 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+github: [metadata]
