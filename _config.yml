@@ -13,12 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Sanshi Yu [WIP] # TODO remove WIP
+title: Sanshi Lei Yu's Homepage
 email: meet.leiyu@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Sanshi Lei Yu's Homepage.
 twitter_username: yusanshi
 github_username: yusanshi
 minimal_mistakes_skin: default
@@ -28,9 +26,9 @@ search: true
 markdown: kramdown
 remote_theme: "mmistakes/minimal-mistakes@4.23.0"
 # Outputting
-permalink: /:categories/:title/
+permalink: /posts/:title/
 paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+paginate_path: /posts/page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
@@ -58,19 +56,19 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name: "Sanshi Yu"
+  name: "Sanshi Lei Yu"
   avatar: "/assets/images/bio-photo.jpg" # TODO change photo
-  bio: "My awesome biography constrained to a sentence or two goes here."
+  bio: "Postgraduate, CS, USTC"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      url: "{{ site.email }}" # TODO (with/without ""?)
+      url: "mailto:meet.leiyu@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/" # TODO (link with/without username?)
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/yusanshi/"
+      url: "https://github.com/yusanshi"
+    # - label: "LinkedIn"
+    #   icon: "fab fa-fw fa-linkedin" # TODO icon color?
+    #   url: "https://www.linkedin.com/in/yusanshi/"
     - label: "Google Scholar"
       icon: "fas fa-fw fa-graduation-cap"
       url: "https://scholar.google.com/citations?user=dE3GoNsAAAAJ"
@@ -78,16 +76,16 @@ author:
       icon: "fab fa-fw fa-researchgate"
       url: "https://www.researchgate.net/profile/Sanshi-Lei-Yu"
     - label: "ORCID"
-      icon: "ai ai-orcid-square ai-fw"
+      icon: "fab fa-fw fa-orcid"
       url: "https://orcid.org/0000-0001-9393-1397"
       # TODO change icon from fa?
 
 # TODO remove footer?
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/yusanshi"
+# footer:
+#   links:
+#     - label: "GitHub"
+#       icon: "fab fa-fw fa-github"
+#       url: "https://github.com/yusanshi"
 
 defaults:
   # _posts
@@ -99,8 +97,9 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
-      share: true
-      related: true
+      show_date: true
+      toc: true
+      toc_label: "Table of Contents"
   # _pages
   - scope:
       path: "_pages"
@@ -109,11 +108,14 @@ defaults:
       layout: single
       author_profile: true
 
-category_archive:
-  type: liquid
-  path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
 
 github: [metadata]
+
+comments:
+  provider: "disqus" # TODO
+  disqus:
+    shortname: "yusanshi"
+# TODO favicon.ico

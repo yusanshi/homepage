@@ -1,10 +1,6 @@
 main:
-  - title: "About"
-    url: /about/ # TODO make it "/"
-  - title: "Publications"
-    url: /publications/
-  - title: "Presentations"
-    url: /presentations/
+  - title: "Home"
+    url: /
   - title: "CV"
     url: /cv/
   - title: "Posts"
