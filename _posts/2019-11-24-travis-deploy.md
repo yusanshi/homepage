@@ -1,6 +1,8 @@
 ---
 title: 利用 Travis CI 自动部署 Hexo 博客
-date: 2019-11-24 17:13:00
+tags:
+  - Travis
+  - CI/CD
 ---
 
 # 背景

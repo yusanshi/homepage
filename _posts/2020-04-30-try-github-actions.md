@@ -1,6 +1,9 @@
 ---
 title: 试用 GitHub Actions
-date: 2020-04-30 20:23:00
+tags:
+  - GitHub Actions
+  - CI/CD
+  - GitHub
 ---
 
 # 背景

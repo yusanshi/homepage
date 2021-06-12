@@ -1,6 +1,7 @@
 ---
 title: Random Walk Problem
-date: 2020-01-28 17:46:00
+tags:
+  - Math
 ---
 
 # Problem

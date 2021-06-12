@@ -1,6 +1,7 @@
 ---
 title: Git Submodule 管理
-date: 2019-12-15 11:05:00
+tags:
+  - Git
 ---
 
 最近的一个小 [repository](https://github.com/yusanshi/ros_package) 用到了多个 submodule，而我又对它们做了修改，如何保存我对它们的修改呢？

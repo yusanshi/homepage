@@ -1,6 +1,7 @@
 ---
 title: LaTeX 生成 SVG 文件
-date: 2020-03-30 16:54:00
+tags:
+  - LaTeX
 ---
 
 # 背景

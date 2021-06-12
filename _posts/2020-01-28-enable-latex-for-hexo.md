@@ -1,6 +1,8 @@
 ---
 title: 为 Hexo 添加对 LaTeX 的支持
-date: 2020-01-28 23:46:00
+tags:
+  - LaTeX
+  - Hexo
 ---
 
 # 背景

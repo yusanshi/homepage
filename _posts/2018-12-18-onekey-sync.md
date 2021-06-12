@@ -1,6 +1,8 @@
 ---
 title: Jekyll 快速同步到服务器
-date: 2018-12-18 00:00:00
+tags:
+  - Jekyll
+  - Scripts
 ---
 
 Jekyll 博客从 GitHub 上迁移到自己的服务器上了。现在在本地使用 `bundle exec jekyll serve` 生成 html 文件后，需要手动把 `_site` 文件夹中内容同步到服务器上。
