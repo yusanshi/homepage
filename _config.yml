@@ -119,3 +119,6 @@ comments:
   disqus:
     shortname: "yusanshi"
 # TODO favicon.ico
+
+atom_feed:
+  hide: true

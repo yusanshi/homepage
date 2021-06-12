@@ -16,4 +16,4 @@ My research focuses on data mining.
 
 # Publications
 
-- **Sanshi Lei Yu**, Zhuoxuan Jiang, Dong-Dong Chen, Shanshan Feng, Dongsheng Li, Qi Liu, Jinfeng Yi. Leveraging Tripartite Interaction Information from Live Stream E-Commerce for Improving Product Recommendation. The 27th ACM SIGKDD Conference on Knowledge Discovery and Data Mining **(KDD 2021)**. [[Paper]]() [[Code]]() [[Slide]]() [[Talk]]().
+- **Sanshi Lei Yu**, Zhuoxuan Jiang, Dong-Dong Chen, Shanshan Feng, Dongsheng Li, Qi Liu, Jinfeng Yi. Leveraging Tripartite Interaction Information from Live Stream E-Commerce for Improving Product Recommendation. The 27th ACM SIGKDD Conference on Knowledge Discovery and Data Mining **(KDD 2021)**. [[Paper]](https://arxiv.org/pdf/2106.03415.pdf) [[Code]](https://github.com/yusanshi/LSEC-GNN) [[Slide]]() [[Talk]]().
