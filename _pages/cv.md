@@ -1,6 +1,7 @@
 ---
 title: "CV"
 permalink: /cv/
+classes: wide
 ---
 
-TODO
+<embed type="application/pdf" src="https://storage.yusanshi.com/cv.pdf" width="800" height="1200">
