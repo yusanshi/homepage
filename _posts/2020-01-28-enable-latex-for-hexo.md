@@ -3,6 +3,7 @@ title: 为 Hexo 添加对 LaTeX 的支持
 tags:
   - LaTeX
   - Hexo
+mathjax: true
 ---
 
 # 背景
@@ -21,7 +22,7 @@ tags:
 
 1. 转义问题
 
-   大概是渲染工具的行为，数学式子里的 `\` 被识别成转移符号，于是乎，`$ \{X_n\} $`（$ \\{X_n\\} $）变成了 `$ {X_n} $`（$ {X_n} $），同时 `\\` 也变成了 `\`。怎么解决这个问题呢？最终我想到一个办法：写完 Markdown 后，把所有的 `\` 替换成 `\\`（当然，这样有个问题，会把 Latex 公式外的普通文本里的 `\` 也给替换了，解决这个问题也不难：识别是否在公式内即可，啥时候有空我想写一个在线转换的小网页）。
+   大概是渲染工具的行为，数学式子里的 `\` 被识别成转义符号，于是乎，`$ \{X_n\} $`（$ \\{X_n\\} $）变成了 `$ {X_n} $`（$ {X_n} $），同时 `\\` 也变成了 `\`。怎么解决这个问题呢？最终我想到一个办法：写完 Markdown 后，把所有的 `\` 替换成 `\\`（当然，这样有个问题，会把 Latex 公式外的普通文本里的 `\` 也给替换了，解决这个问题也不难：识别是否在公式内即可，啥时候有空我想写一个在线转换的小网页）。
 
 2. 需要修改 `hexo-renderer-mathjax` 包
 
@@ -31,7 +32,7 @@ tags:
 
    最后，我只能换个思路：修改完 npm.js 上的 JS 地址后传到 GitHub 上。说干就干，`wget $(npm view hexo-renderer-mathjax dist.tarball)` 获取 npmjs.com 上的包，找到 JS 地址修改完后，传到 `old` 分支上（https://github.com/yusanshi/hexo-renderer-mathjax/tree/old ）。使用 Git 作为包的安装源时，如果要指定其它分支，要在链接后加上 `#branch_name`，即 `npm install git+https://github.com/yusanshi/hexo-renderer-mathjax.git#old --save`。最终，`package.json` 的 `dependencies` 多了这一行：`"hexo-renderer-mathjax": "git+https://github.com/yusanshi/hexo-renderer-mathjax.git#old",`。
 
-这两个问题解决之后，就可以愉快地写 Latex 了。行内公式 `$ f_{ij} = \sum_{n=1}^{\infty} f_{ij}^{(n)} $` 显示效果：$ f*{ij} = \sum*{n=1}^{\infty} f*{ij}^{(n)} $，块公式 `$$ c(x)=\sum*{n=0}^{\infty }C*{n}x^{n} ={\frac {1-{\sqrt {1-4x}}}{2x}} $$` 显示效果：$$ c(x)=\sum*{n=0}^{\infty }C\_{n}x^{n} ={\frac {1-{\sqrt {1-4x}}}{2x}} $$
+这两个问题解决之后，就可以愉快地写 Latex 了。行内公式 `$ f_{ij} = \sum_{n=1}^{\infty} f_{ij}^{(n)} $` 显示效果：$ f_{ij} = \sum_{n=1}^{\infty} f_{ij}^{(n)} $，块公式 `$$ c(x)=\sum_{n=0}^{\infty }C_{n}x^{n} ={\frac {1-{\sqrt {1-4x}}}{2x}} $$` 显示效果：$$ c(x)=\sum_{n=0}^{\infty }C\_{n}x^{n} ={\frac {1-{\sqrt {1-4x}}}{2x}} $$
 
 当然，别忘了转义问题（在线转换的小网页明天就写）。
 
