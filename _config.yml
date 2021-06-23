@@ -57,7 +57,7 @@ plugins:
 
 author:
   name: "Sanshi Lei Yu"
-  avatar: "/assets/images/bio-photo.jpg" # TODO change photo
+  avatar: "/assets/images/portrait.jpg"
   bio: "Postgraduate, CS, USTC"
   links:
     - label: "Email"
@@ -116,7 +116,6 @@ comments:
   provider: "disqus"
   disqus:
     shortname: "yusanshi"
-# TODO favicon.ico
 
 atom_feed:
   hide: true
