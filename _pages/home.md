@@ -12,7 +12,7 @@ I received my Bachelor of Engineering degree from USTC in 2021.
 
 ## Research
 
-My research focuses on data mining.
+My research focuses on data mining and recommendation system.
 
 ## Publication<span style="opacity:0.1">s</span>
 <!-- TODO: remove opacity for the word 'Publications' when publishing another paper -->
