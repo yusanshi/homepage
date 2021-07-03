@@ -31,4 +31,7 @@
         <code>{{ site.github.build_revision | truncate: 7, "" }}</code>
     </a>.
     {% endif %}
+    {% if site.beian %}
+    <a href="https://beian.miit.gov.cn/" target="_blank">{{ site.beian }}</a>.
+    {% endif %}
 </div>
