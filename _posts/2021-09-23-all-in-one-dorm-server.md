@@ -69,7 +69,7 @@ iface eno1 inet manual
 iface enp4s0 inet manual
 
 auto vmbr0
-iface vmbr0 inet dhcp
+iface vmbr0 inet manual
 	bridge-ports enp1s0
 	bridge-stp off
 	bridge-fd 0
@@ -91,9 +91,10 @@ iface vmbr3 inet manual
 	bridge-ports enp4s0
 	bridge-stp off
 	bridge-fd 0
+
 ```
 
-### `dorm-host.yusanshi.com.conf`
+### `host.dorm.yusanshi.com.conf`
 
 ```
 ssl_certificate /root/cert/fullchain.pem;
@@ -114,23 +115,27 @@ server {
     listen 8000 ssl default_server;
     listen [::]:8000 ssl default_server;
     server_name _;
+
     error_page 497 https://$host:$server_port$request_uri;
-    return 301 https://dorm-host.yusanshi.com;
+
+    return 301 https://host.dorm.yusanshi.com;
 }
 
-## dorm-host.yusanshi.com
+## host.dorm.yusanshi.com
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
     listen 8000 ssl;
     listen [::]:8000 ssl;
-    server_name dorm-host.yusanshi.com;
+    server_name host.dorm.yusanshi.com;
+
     error_page 497 https://$host:$server_port$request_uri;
+
     location / {
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
-        proxy_pass https://localhost:8006;
+        proxy_pass https://127.0.0.1:8006;
         proxy_buffering off;
         client_max_body_size 0;
         proxy_connect_timeout  3600s;
@@ -339,6 +344,4 @@ server {
 
 # 已知问题
 
-- Proxmox Host 无法获得 IPv6 地址；
-- **Wireless AP 下的设备**虽然能获得 IPv6 地址并正常访问 IPv6 网站，外网的 IPv6 设备也能正常访问 **Proxmox 中的 Ubuntu 的 IPv6 地址**，但是 **Wireless AP 下的设备**不能访问 **Proxmox 中的 Ubuntu 的 IPv6 地址**，我觉得可能是防火墙的问题，但是在 OpenWrt 和 Proxmox 中的防火墙中一顿折腾，也没有解决问题。学艺不精，又没有更多时间研究这个问题，就先这样吧 :)
-
+- Proxmox Host 无法获得 IPv4 地址。
