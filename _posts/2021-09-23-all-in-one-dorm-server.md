@@ -338,4 +338,5 @@ server {
 
 # 已知问题
 
-- Virtual Machines 和 LAN 下的设备都能正常获得 IPv4 和 IPv6 地址（指公网/教育网地址，下同），但 Proxmox Host 无法获得 IPv4 地址，只能获得 IPv6 地址。
+- Virtual Machines 和 LAN 下的设备都能正常获得 IPv4 和 IPv6 地址（指公网/教育网地址，下同），但 Proxmox Host 无法获得 IPv4 地址，只能获得 IPv6 地址；
+- 设备重启后 Wireless AP 下的设备不能访问 Proxmox Host 和 OpenWrt 外的其他 Proxmox VMs 的 IPv6 地址，需要先在 OpenWrt 中手动 ping 一下它们的 IPv6 地址：`ping -c 4 host.dorm.yusanshi.com`（Proxmox Host），`ping -c 4 dorm.yusanshi.com`（Proxmox Ubuntu VM）。
