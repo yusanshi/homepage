@@ -6,7 +6,7 @@ classes: wide
 
 ## Bio
 
-I'm Sanshi Lei Yu, or 余磊 (legal name), a postgraduate student in [USTC](https://en.ustc.edu.cn/) and [BDAA Lab](https://bigdata.ustc.edu.cn/). My advisor is [Qi Liu](http://staff.ustc.edu.cn/~qiliuql/).
+I'm Sanshi Lei Yu, or 余磊 (legal name), a postgraduate student in [USTC](https://www.ustc.edu.cn/) and [BDAA Lab](https://bigdata.ustc.edu.cn/). My advisor is [Qi Liu](http://staff.ustc.edu.cn/~qiliuql/).
 
 I received my Bachelor of Engineering degree from USTC in 2021.
 
