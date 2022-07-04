@@ -24,7 +24,7 @@ search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: "mmistakes/minimal-mistakes@4.23.0"
+remote_theme: 'mmistakes/minimal-mistakes@4.23.0'
 # Outputting
 permalink: /posts/:title/
 paginate: 5 # amount of posts to show
@@ -56,39 +56,33 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name: "Sanshi Lei Yu"
-  avatar: "/assets/images/portrait.jpg"
-  bio: "Postgraduate, CS, USTC"
+  name: 'Sanshi Lei Yu'
+  avatar: '/assets/images/portrait.jpg'
+  bio: 'Postgraduate, CS, USTC'
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:meet.leiyu@gmail.com"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/yusanshi"
+    - label: 'Email'
+      icon: 'fas fa-fw fa-envelope'
+      url: 'mailto:meet.leiyu@gmail.com'
+    - label: 'GitHub'
+      icon: 'fab fa-fw fa-github'
+      url: 'https://github.com/yusanshi'
     # - label: "LinkedIn"
     #   icon: "fab fa-fw fa-linkedin" # TODO icon color?
     #   url: "https://www.linkedin.com/in/yusanshi/"
-    - label: "Google Scholar"
-      icon: "fas fa-fw fa-graduation-cap"
-      url: "https://scholar.google.com/citations?user=dE3GoNsAAAAJ"
-    - label: "ResearchGate"
-      icon: "fab fa-fw fa-researchgate"
-      url: "https://www.researchgate.net/profile/Sanshi-Lei-Yu"
-    - label: "ORCID"
-      icon: "fab fa-fw fa-orcid"
-      url: "https://orcid.org/0000-0001-9393-1397"
-
-# footer:
-#   links:
-#     - label: "GitHub"
-#       icon: "fab fa-fw fa-github"
-#       url: "https://github.com/yusanshi"
+    - label: 'Google Scholar'
+      icon: 'fas fa-fw fa-graduation-cap'
+      url: 'https://scholar.google.com/citations?user=dE3GoNsAAAAJ'
+    - label: 'ResearchGate'
+      icon: 'fab fa-fw fa-researchgate'
+      url: 'https://www.researchgate.net/profile/Sanshi-Lei-Yu'
+    - label: 'ORCID'
+      icon: 'fab fa-fw fa-orcid'
+      url: 'https://orcid.org/0000-0001-9393-1397'
 
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: ''
       type: posts
     values:
       layout: single
@@ -97,10 +91,10 @@ defaults:
       comments: true
       show_date: true
       toc: true
-      toc_label: "Table of Contents"
+      toc_label: 'Table of Contents'
   # _pages
   - scope:
-      path: "_pages"
+      path: '_pages'
       type: pages
     values:
       layout: single
@@ -111,11 +105,11 @@ tag_archive:
   path: /tags/
 
 comments:
-  provider: "disqus"
+  provider: 'disqus'
   disqus:
-    shortname: "yusanshi"
+    shortname: 'yusanshi'
 
 atom_feed:
   hide: true
 
-beian: "豫ICP备17024561号"
+beian: '豫ICP备17024561号'
