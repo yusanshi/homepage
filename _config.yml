@@ -100,3 +100,6 @@ atom_feed:
   hide: true
 
 beian: '豫ICP备17024561号'
+
+cookie_consent: true
+privacy_policy: true

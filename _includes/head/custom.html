@@ -17,3 +17,13 @@
   });
 </script>
 {% endif %}
+
+<!-- https://github.com/orestbida/cookieconsent -->
+{% if site.cookie_consent %}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.2/dist/cookieconsent.css"
+  media="print"
+  onload="this.media='all'"
+/>
+{% endif %}
