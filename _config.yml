@@ -39,6 +39,9 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
+analytics:
+  provider: 'custom'
+
 author:
   name: 'Sanshi Lei Yu'
   avatar: '/assets/images/portrait.jpg'
