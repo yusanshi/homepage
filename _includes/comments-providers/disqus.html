@@ -12,6 +12,8 @@
       s = d.createElement('script');
     s.src = 'https://{{ site.comments.disqus.shortname }}.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
+    s.setAttribute('type', 'text/plain');
+    s.setAttribute('data-cookiecategory', 'disqus');
     (d.head || d.body).appendChild(s);
   })();
 </script>

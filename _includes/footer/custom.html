@@ -15,41 +15,13 @@
       current_lang: 'en',
       autoclear_cookies: true, // default: false
       page_scripts: true, // default: false
-
-      // mode: 'opt-in'                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
-      // delay: 0,                               // default: 0
-      // auto_language: '',                      // default: null; could also be 'browser' or 'document'
-      // autorun: true,                          // default: true
-      // force_consent: false,                   // default: false
-      // hide_from_bots: false,                  // default: false
-      // remove_cookie_tables: false             // default: false
-      // cookie_name: 'cc_cookie',               // default: 'cc_cookie'
-      // cookie_expiration: 182,                 // default: 182 (days)
-      // cookie_necessary_only_expiration: 182   // default: disabled
-      // cookie_domain: location.hostname,       // default: current domain
-      // cookie_path: '/',                       // default: root
-      // cookie_same_site: 'Lax',                // default: 'Lax'
-      // use_rfc_cookie: false,                  // default: false
-      // revision: 0,                            // default: 0
-
-      onFirstAction: function (user_preferences, cookie) {
-        // callback triggered only once on the first accept/reject action
-      },
-
-      onAccept: function (cookie) {
-        // callback triggered on the first accept/reject action, and after each page load
-      },
-
-      onChange: function (cookie, changed_categories) {
-        // callback triggered when user changes preferences after consent has already been given
-      },
-
+      delay: 1000, // default: 0
       languages: {
         en: {
           consent_modal: {
             title: 'We use cookies!',
             description:
-              'Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. <button type="button" data-cc="c-settings" class="cc-link">Let me choose</button>',
+              'Hi, this website uses cookies for commenting service and web traffic analysis. <button type="button" data-cc="c-settings" class="cc-link">Show details</button>',
             primary_btn: {
               text: 'Accept all',
               role: 'accept_all', // 'accept_selected' or 'accept_all'
@@ -73,14 +45,44 @@
             ],
             blocks: [
               {
-                title: 'Cookie usage 📢',
                 description:
-                  'I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="{% link _pages/privacy.md %}" class="cc-link">privacy policy</a>.',
+                  'We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="{% link _pages/privacy.md %}" target="_blank" class="cc-link">privacy policy</a>.',
+              },
+              {
+                title: 'Disqus cookies',
+                description:
+                  'We use <a href="https://disqus.com/" target="_blank" class="cc-link">Disqus</a> for comments, which installs cookies on your device for posting comments and keeping login information. For more details, see <a href="https://help.disqus.com/en/articles/1717103-disqus-privacy-policy" target="_blank" class="cc-link">Disqus privacy policy</a>. <br><span style="font-weight: 600; font-style: italic;">Note: if you disable this, you will not be able to comment on posts.</span>',
+                toggle: {
+                  value: 'disqus', // your cookie category
+                  enabled: true,
+                  readonly: false,
+                },
+                cookie_table: [
+                  // list of all expected cookies
+                  {
+                    col1: 'disqusauth',
+                    col2: 'disqus.com',
+                    col3: '1 month',
+                    col4: 'To post comments and have your Disqus login information remembered across pages.',
+                  },
+                  {
+                    col1: '__jid',
+                    col2: 'disqus.com',
+                    col3: '1 hour',
+                    col4: 'Tracking of using the comments platform Disqus.',
+                  },
+                  {
+                    col1: 'disqus_unique',
+                    col2: 'disqus.com',
+                    col3: '1 year',
+                    col4: 'Tracking of using the comments platform Disqus.',
+                  },
+                ],
               },
               {
                 title: 'Google Analytics cookies',
                 description:
-                  'These cookies allow the website to remember the choices you have made in the past https://support.google.com/analytics/topic/2919631',
+                  'We use <a href="https://analytics.google.com/" target="_blank" class="cc-link">Google Analytics</a>, a web analysis service from Google. Google Analytics uses cookies to "remember" what you have done on previous pages / interactions with the website. For more details, see <a href="https://support.google.com/analytics/topic/2919631" target="_blank" class="cc-link">Google Data privacy and security policy</a>.',
                 toggle: {
                   value: 'google-analytics', // your cookie category
                   enabled: false,
@@ -89,69 +91,31 @@
                 cookie_table: [
                   // list of all expected cookies
                   {
-                    col1: '^_ga', // match all cookies starting with "_ga"
+                    col1: '^_ga',
                     col2: 'google.com',
                     col3: '2 years',
-                    col4: 'description ...',
+                    col4: 'Used by Google Analytics to collect data on the number of times a user has visited the website as well as dates for the first and most recent visit.',
                     is_regex: true,
-                  },
-                  {
-                    col1: '_gid',
-                    col2: 'google.com',
-                    col3: '1 day',
-                    col4: 'description ...',
                   },
                 ],
               },
               {
-                title: 'Baidu Statistics (百度统计) cookies',
+                title: 'Baidu Analytics (百度统计) cookies',
                 description:
-                  'These cookies allow the website to remember the choices you have made in the past https://tongji.baidu.com/web/help/article?id=330',
+                  'Similar to Google Analytics, we also use <a href="https://tongji.baidu.com/" target="_blank" class="cc-link">Baidu Analytics (百度统计)</a> for web traffic analysis. For more details, see <a href="https://tongji.baidu.com/web/help/article?id=330" target="_blank" class="cc-link">Baidu Analytics privacy policy</a>.',
                 toggle: {
-                  value: 'baidu-statistics', // your cookie category
+                  value: 'baidu-analytics', // your cookie category
                   enabled: false,
                   readonly: false,
                 },
                 cookie_table: [
                   // list of all expected cookies
                   {
-                    col1: '^_ga', // match all cookies starting with "_ga"
-                    col2: 'google.com',
-                    col3: '2 years',
-                    col4: 'description ...',
+                    col1: '^Hm_',
+                    col2: 'baidu.com',
+                    col3: '1 year',
+                    col4: "Used to send data to Baidu about the visitor's device and behavior, and track the visitor across devices and marketing channels.",
                     is_regex: true,
-                  },
-                  {
-                    col1: '_gid',
-                    col2: 'google.com',
-                    col3: '1 day',
-                    col4: 'description ...',
-                  },
-                ],
-              },
-              {
-                title: 'Disqus cookies',
-                description:
-                  'These cookies allow the website to remember the choices you have made in the past https://',
-                toggle: {
-                  value: 'disqus', // your cookie category
-                  enabled: false,
-                  readonly: false,
-                },
-                cookie_table: [
-                  // list of all expected cookies
-                  {
-                    col1: '^_ga', // match all cookies starting with "_ga"
-                    col2: 'google.com',
-                    col3: '2 years',
-                    col4: 'description ...',
-                    is_regex: true,
-                  },
-                  {
-                    col1: '_gid',
-                    col2: 'google.com',
-                    col3: '1 day',
-                    col4: 'description ...',
                   },
                 ],
               },

@@ -1,5 +1,7 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script
+  type="text/plain"
+  data-cookiecategory="google-analytics"
   async
   src="https://www.googletagmanager.com/gtag/js?id=G-DPKQ4V6HD7"
 ></script>
@@ -18,6 +20,8 @@
   (function () {
     var hm = document.createElement('script');
     hm.src = 'https://hm.baidu.com/hm.js?b1fb582c55e0a239c46f429d552383e7';
+    hm.setAttribute('type', 'text/plain');
+    hm.setAttribute('data-cookiecategory', 'baidu-analytics');
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(hm, s);
   })();
