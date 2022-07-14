@@ -21,7 +21,7 @@ search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: 'mmistakes/minimal-mistakes@4.24.0'
+remote_theme: 'mmistakes/minimal-mistakes@8a67ce8e41ec850f2d7c373aa47739b2abfee6f1' # 2022.7.14
 # Outputting
 permalink: /posts/:year-:month-:day/:slug/
 paginate: 5 # amount of posts to show
