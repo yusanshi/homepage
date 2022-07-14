@@ -17,7 +17,12 @@ title: Sanshi Lei Yu's Homepage
 email: meet.leiyu@gmail.com
 description: Sanshi Lei Yu's Homepage.
 minimal_mistakes_skin: default
+
 search: true
+search_full_content: true
+search_provider: 'lunr'
+lunr:
+  search_within_pages: true
 
 # Build settings
 markdown: kramdown
