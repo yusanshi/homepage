@@ -1,11 +1,11 @@
 ---
 title: Random Walk Problem
 tags:
-  - Math
+  - math
 mathjax: true
 ---
 
-# Problem
+## Problem
 
 Consider the random walk $ X=\\{X_n\\}_{n \geq 0} $ on $ \mathbb{Z} $ that starts at $ X_0=0 $. The particle moves with probability $ p $ one unit to the right and with probability $ q=1-p $ one unit to the left at each transition. Please show that the state $ 0 $ is recurrent if and only if $ p=q=1/2 $, i.e.,
 
@@ -13,7 +13,7 @@ $$
 \sum_{n=1}^{\infty} \mathbb{P}(X_n=0, X_k \neq 0, k = 1,\dots,n-1|X_0=0)=1\, \Leftrightarrow\, p=q=1/2.
 $$
 
-# Solution
+## Solution
 
 Let $f_{ij}^{(n)}$ be the probability that a particle starting at state $i$ will visit state $j$ for the first time after $n$ steps, i.e.,
 

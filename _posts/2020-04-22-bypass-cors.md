@@ -4,7 +4,7 @@ tags:
   - CORS
 ---
 
-# 背景
+## 背景
 
 我们的网课用的平台是 classin（<https://www.eeo.cn/>），那里有课程的回放，我的一个室友想让我帮他下载回放。
 
@@ -26,7 +26,7 @@ tags:
 
 于是我就开始寻求解决方案...
 
-# 经过
+## 经过
 
 关于 CORS，可以参考 MDN 这里的文章 <https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS>。
 

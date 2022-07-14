@@ -5,7 +5,7 @@ tags:
   - Nginx
 ---
 
-# 背景
+## 背景
 
 在教育网内有一台服务器提供 WEB 服务（假设其教育网 IP 是 `202.38.64.246`），绑定域名 `example.com`。教育网 IP 的 443 端口在公网无法访问，但有一台公网服务器（假设 IP 是 `112.80.248.75`）。
 
@@ -15,9 +15,9 @@ tags:
 
 
 
-# 方案
+## 方案
 
-## 基本思路
+### 基本思路
 
 借助 DNS 解析服务商的“智能解析”，在教育网线路解析到教育网真实 IP，在公网线路解析到公网服务器 IP，同时这个公网服务器运行 frp server 端，教育网服务器运行 frp client 端，公网服务器借助 Nginx 和 frp 将请求反向代理至教育网服务器（实际上这里的 Nginx 和 frp 各自运行了一个独立的反向代理服务，即串联了两层反向代理）。
 
@@ -26,11 +26,11 @@ tags:
 
 
 
-## 具体过程
+### 具体过程
 
-### 教育网服务器
+#### 教育网服务器
 
-#### frp
+##### frp
 
 **frpc.ini**
 
@@ -73,7 +73,7 @@ WantedBy=multi-user.target
 
 
 
-#### Nginx
+##### Nginx
 
 保持原始正常配置即可，如：
 
@@ -99,15 +99,15 @@ server {
 
 
 
-### 公网服务器
+#### 公网服务器
 
-#### 防火墙放行
+##### 防火墙放行
 
 在服务器控制面板放行 frp 的 7000 端口。
 
 ![](https://img.yusanshi.com/upload/20211108211019688737.png)
 
-#### frp
+##### frp
 
 **frps.ini**
 
@@ -138,7 +138,7 @@ LimitNOFILE=1048576
 WantedBy=multi-user.target
 ```
 
-#### Nginx
+##### Nginx
 
 它的作用是将访问 `https://example.com` 的请求反向代理至本地 10443 端口。这里提供两种思路：使用 Nginx `stream` 块实现的 SSL Passthrough 和使用 Nginx `http` 块实现的 SSL Bridging。
 
@@ -152,7 +152,7 @@ WantedBy=multi-user.target
 | 反向代理服务器端流量控制能力      | Bad（流量未解密，不能为所欲为）             | Good（流量解密后可以为所欲为）             |
 | 安全性                            | Good                                        | Good                                       |
 
-##### SSL Passthrough
+###### SSL Passthrough
 
 下图偷自 <https://parksehun.medium.com/ssl-passthrough-vs-ssl-termination-vs-ssl-bridging-f66b24d4d0aa>。
 
@@ -196,7 +196,7 @@ stream {
 
 ```
 
-##### SSL Bridging
+###### SSL Bridging
 
 下图图源和上图相同。
 
@@ -237,7 +237,7 @@ stream {
 }
 ```
 
-### 域名解析
+#### 域名解析
 
 借助 DNS 解析服务商的“智能解析”，在教育网线路解析到教育网真实 IP，在公网线路解析到公网服务器 IP。
 

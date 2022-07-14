@@ -1,8 +1,8 @@
 ---
 title: All in One Dorm Server 配置记录
 tags:
-  - Router
-  - Server
+  - router
+  - server
   - Nginx
   - Proxmox
   - OpenWrt
@@ -12,7 +12,7 @@ tags:
 
 
 
-# 硬件
+## 硬件
 
 | 项目 | 型号                   |
 | ---- | ---------------------- |
@@ -29,7 +29,7 @@ tags:
 
 
 
-# 软件
+## 软件
 
 **Host**
 
@@ -45,16 +45,16 @@ Proxmox VE 7.0-2
 ![](https://img.yusanshi.com/upload/20220704120918310773.png)
 
 
-# 配置文件
+## 配置文件
 
-## Host
+### Host
 
-### `/etc/network/interfaces`
+#### `/etc/network/interfaces`
 
 这个配置文件里的 `eno1` 的别名是 `enp3s0`，但是我不知道怎么把它还原成 `enp3s0`（或者说怎么优雅地做这件事，我找到的方案很复杂）。
 
 ```
-# /etc/network/interfaces
+## /etc/network/interfaces
 auto lo
 iface lo inet loopback
 
@@ -92,14 +92,14 @@ iface vmbr3 inet manual
 
 ```
 
-### `host.dorm.yusanshi.com.conf`
+#### `host.dorm.yusanshi.com.conf`
 
 ```
 ssl_certificate /root/cert/fullchain.pem;
 ssl_certificate_key /root/cert/privkey.pem;
 
 
-## http -> https
+### http -> https
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -119,7 +119,7 @@ server {
     return 301 https://host.dorm.yusanshi.com;
 }
 
-## host.dorm.yusanshi.com
+### host.dorm.yusanshi.com
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -147,14 +147,14 @@ server {
 
 
 
-## Virtual Machines
+### Virtual Machines
 
-### OpenWrt
+#### OpenWrt
 
-#### `/etc/config/network`
+##### `/etc/config/network`
 
 ```
-# /etc/config/network
+## /etc/config/network
 config interface 'loopback'
 	option device 'lo'
 	option proto 'static'
@@ -188,7 +188,7 @@ config interface 'wan6'
 
 ```
 
-#### `/etc/config/dhcp`
+##### `/etc/config/dhcp`
 
 参考自 <https://openwrt.org/docs/guide-user/network/ipv6/start#ipv6_relay>，自己在原内容上加的只有：
 
@@ -209,7 +209,7 @@ config dhcp wan6
 下面是添加了 IPv6 relay 配置后的文件：
 
 ```
-# /etc/config/dhcp
+## /etc/config/dhcp
 config dnsmasq
 	option domainneeded '1'
 	option boguspriv '1'
@@ -263,12 +263,12 @@ config odhcpd 'odhcpd'
 
 ```
 
-### Ubuntu
+#### Ubuntu
 
-#### `/etc/netplan/00-installer-config.yaml`
+##### `/etc/netplan/00-installer-config.yaml`
 
 ```
-# /etc/netplan/00-installer-config.yaml
+## /etc/netplan/00-installer-config.yaml
 network:
   ethernets:
     ens18:
@@ -277,13 +277,13 @@ network:
   version: 2
 ```
 
-#### `dorm.yusanshi.com.conf`
+##### `dorm.yusanshi.com.conf`
 
 ```
 ssl_certificate /home/yu/cert/fullchain.pem;
 ssl_certificate_key /home/yu/cert/privkey.pem;
 
-## http -> https
+### http -> https
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -291,7 +291,7 @@ server {
     return 301 https://$host$request_uri;
 }
 
-## *.dorm.yusanshi.com
+### *.dorm.yusanshi.com
 server {
     listen 443 ssl default_server;
     listen [::]:443 ssl default_server;
@@ -302,7 +302,7 @@ server {
     return 301 https://dorm.yusanshi.com;
 }
 
-## dorm.yusanshi.com
+### dorm.yusanshi.com
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -316,7 +316,7 @@ server {
     }
 }
 
-## code.dorm.yusanshi.com
+### code.dorm.yusanshi.com
 server {
     listen 443 ssl;
     listen [::]:443 ssl;
@@ -334,7 +334,7 @@ server {
 }
 ```
 
-# 已知问题
+## 已知问题
 
 - Virtual Machines 和 LAN 下的设备都能正常获得 IPv4 和 IPv6 地址（指公网/教育网地址，下同），但 Proxmox Host 无法获得 IPv4 地址，只能获得 IPv6 地址；
 - 设备重启后 Wireless AP 下的设备不能访问 Proxmox Host 和 OpenWrt 外的其他 Proxmox VMs 的 IPv6 地址，需要先在 OpenWrt 中手动 ping 一下它们的 IPv6 地址：`ping -c 4 host.dorm.yusanshi.com`（Proxmox Host），`ping -c 4 dorm.yusanshi.com`（Proxmox Ubuntu VM）。

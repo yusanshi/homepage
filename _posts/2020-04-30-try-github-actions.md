@@ -6,29 +6,29 @@ tags:
   - GitHub
 ---
 
-# 背景
+## 背景
 
 软件工程课我们的大作业中，前端的 CI/CD 由我负责。以前用 Travis CI 做这些，但是现在我想尝试下 GitHub Actions。
 
 我的需求是，GitHub 上的 Vue.js 项目在编译、测试通过后，部署到我自己的服务器（<https://interview.yusanshi.com>）上。
 
-# 经过
+## 经过
 
 服务器端配置过程如下。
 
 ```bash
-# 为 GitHub Actions 创建用户
+## 为 GitHub Actions 创建用户
 sudo useradd -m github
 sudo chown -R github:github <Website Dir>
 sudo su github
 cd ~
-# 创建临时密钥对
+## 创建临时密钥对
 ssh-keygen -t rsa -b 4096 -C "github@yusanshi.com"
 cat .ssh/id_rsa.pub > .ssh/authorized_keys
 chmod 600 .ssh/authorized_keys
-# 这里记录下私钥
+## 这里记录下私钥
 cat .ssh/id_rsa
-# 删除临时创建的密钥对
+## 删除临时创建的密钥对
 rm .ssh/id_rsa .ssh/id_rsa.pub
 ```
 

@@ -4,15 +4,15 @@ tags:
   - LaTeX
 ---
 
-# 背景
+## 背景
 
 用 Markdown 写作业的时候，需要用 LaTeX 画一些图，然后在 Markdown 中引用 LaTex 生成的图。
 
 LaTeX 原生生成的文件是 PDF，直接用 HTML 代码也可以嵌入 PDF 文件（使用 `object`、`embed` 等标签，见 [Stack Overflow](https://stackoverflow.com/questions/291813/recommended-way-to-embed-pdf-in-html)），但是我用的 Markdown 客户端 Typora 不支持这个语法，因此需要想办法生成图片，在 Markdown 中引入图片。
 
-# 解决
+## 解决
 
-## v1.0
+### v1.0
 
 Google 后发现我用的 [`standalone`](http://www.ctan.org/pkg/standalone) 类可以直接导出图片，做法是 LaTeX 文件中加上 `convert` 选项，编译时加上 `-shell-escape`，安装 Image Magick，详见 <https://tex.stackexchange.com/questions/51757/how-can-i-use-tikz-to-make-standalone-svg-graphics>。
 
@@ -26,13 +26,13 @@ Google 后发现我用的 [`standalone`](http://www.ctan.org/pkg/standalone) 类
 \documentclass[tikz,convert={density=600}]{standalone}
 ```
 
-## v2.0
+### v2.0
 
 上面的解决办法不让人舒服，需要找到避免 rasterize（栅格化）的转换方法。搜索”PDF to SVG“，找到的在线转换网站里面，有几个是把 PDF 给 rasterize，但也有很多是避免 rasterize 直接生成矢量化的图形的。
 
 这个回答 <https://tex.stackexchange.com/a/51766/211175> 指出了 convert 是可以不用 Image Magick、而用自定义命令的，那么只要找到一个可用的命令来免栅格化转换 PDF 到 SVG，再把这个命令加入到 convert 里面即可。
 
-### 免栅格化转换
+#### 免栅格化转换
 
 一番搜索，发现了三个好用的东西，都可以实现我的需求（免栅格化转换 PDF 到 SVG）。
 
@@ -48,7 +48,7 @@ Google 后发现我用的 [`standalone`](http://www.ctan.org/pkg/standalone) 类
 
 我把原项目 Fork 后，精简了一些东西，又做了些修改，项目地址在 <https://github.com/yusanshi/pdf2svg>。运行 `npm link` 之后，就可以使用 `pdf2svg pdfPath [outputPath]` 来转换文件了（若省略 `outputPath`，则默认值是 `./`）。
 
-### convert 使用自定义命令
+#### convert 使用自定义命令
 
 参考 <https://tex.stackexchange.com/a/51766/211175>，使用 `convert={command=...}` 即可。
 

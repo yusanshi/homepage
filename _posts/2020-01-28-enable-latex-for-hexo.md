@@ -6,7 +6,7 @@ tags:
 mathjax: true
 ---
 
-# 背景
+## 背景
 
 前段时间初学 LaTeX 用它[做了一道题]({% post_url 2020-01-28-random-walk-problem %})，想把它放在自己的博客上，但是我使用的主题 [cactus](https://github.com/probberechts/hexo-theme-cactus) 没有配置 LaTeX，需要我手动安装插件。
 
@@ -14,7 +14,7 @@ mathjax: true
 
 这里把过程给记录下来。
 
-# 记录
+## 记录
 
 看到的很多页面都说要先卸载默认的 Markdown 渲染工具 `hexo-renderer-marked`，但是我实测发现就用它看起来没啥问题，所以就没换。
 
