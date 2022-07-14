@@ -36,7 +36,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jemoji
   - jekyll-include-cache
 
 analytics:
@@ -86,7 +85,7 @@ defaults:
       path: '_pages'
       type: pages
     values:
-      layout: pages
+      layout: single-no-heading
       author_profile: true
 
 tag_archive:
