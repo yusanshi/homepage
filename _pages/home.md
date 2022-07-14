@@ -4,6 +4,8 @@ permalink: /
 classes: wide
 ---
 
+<div style="margin-top: -2em"></div> <!-- reduce the top margin of h2 -->
+
 ## Bio
 
 I'm Sanshi Lei Yu, or 余磊 (legal name), a postgraduate student in [USTC](https://www.ustc.edu.cn/) and [BDAA Lab](https://bigdata.ustc.edu.cn/). My advisor is [Qi Liu](http://staff.ustc.edu.cn/~qiliuql/).
