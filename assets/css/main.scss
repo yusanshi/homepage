@@ -26,3 +26,12 @@ html {
 }
 
 // originally 16px 18px 20px 22px
+
+
+
+.sidebar__right {
+  @include breakpoint($large) {
+    padding-left: 1.5em;
+  }
+}
+
