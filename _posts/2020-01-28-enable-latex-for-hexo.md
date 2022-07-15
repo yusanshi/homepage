@@ -36,4 +36,4 @@ mathjax: true
 
 当然，别忘了转义问题（在线转换的小网页明天就写）。
 
-> 2020.1.29 补充：写好了，https://yusanshi.com/escape.html 。
+> 2020.1.29 补充：写好了，https://storage.yusanshi.com/escape.html 。

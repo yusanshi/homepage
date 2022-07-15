@@ -40,7 +40,7 @@ tags:
 
 ![](https://img.yusanshi.com/upload/20200427003151284156.png)
 
-最终的下载网站在 <https://yusanshi.com/eeo-downloader.html>。
+最终的下载网站在 <https://storage.yusanshi.com/eeo-downloader.html>。
 
 ![](https://img.yusanshi.com/upload/20200427003503543434.png)
 
