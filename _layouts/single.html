@@ -35,20 +35,18 @@ breadcrumbs.html %} {% endunless %} {% endif %}
     <div class="page__inner-wrap">
       {% unless page.header.overlay_color or page.header.overlay_image %}
       <header>
-        {% if page.title %}
-        <h1 id="page-title" class="page__title p-name" itemprop="headline">
-          <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url"
-            >{{ page.title | markdownify | remove: "
-            <p>" | remove: "</p>
-            " }}</a
-          >
-        </h1>
-        {% endif %} {% include page__meta.html %}
+        {% if page.title %}<h1 id="page-title" class="page__title p-name" itemprop="headline">
+          <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
+        </h1>{% endif %}
+        {% include page__meta.html %}
       </header>
       {% endunless %}
 
       <section class="page__content e-content" itemprop="text">
-        {% if page.toc %}
+        {% if page.toc %} {% capture jekyll_toc_output %} {% include toc.html
+        sanitize=true html=content h_min=1 h_max=6 class="toc__menu"
+        skip_no_ids=true %} {% endcapture %} {% assign jekyll_toc_output =
+        jekyll_toc_output | strip %} {% if jekyll_toc_output != '' %}
         <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
           <nav class="toc">
             <header>
@@ -59,11 +57,10 @@ breadcrumbs.html %} {% endunless %} {% endif %}
                 page" }}
               </h4>
             </header>
-            {% include toc.html sanitize=true html=content h_min=1 h_max=6
-            class="toc__menu" skip_no_ids=true %}
+            {{ jekyll_toc_output }}
           </nav>
         </aside>
-        {% endif %} {{ content }} {% if page.link %}
+        {% endif %} {% endif %} {{ content }} {% if page.link %}
         <div>
           <a href="{{ page.link }}" class="btn btn--primary"
             >{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct
