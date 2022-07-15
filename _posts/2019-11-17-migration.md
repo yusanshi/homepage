@@ -10,7 +10,7 @@ title: 记一次博客迁移
 
 我把博客从 Jekyll 迁移到 Hero 了，迁移的时候最重要的事情大概就是替换图片链接了（即把旧的相对链接的图片换成`https://img.yusanshi.com/upload/*`），为此写了一个小脚本，如下。
 
-```Python
+```python
 import requests
 import re
 import os
