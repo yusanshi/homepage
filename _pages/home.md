@@ -4,7 +4,7 @@ permalink: /
 classes: wide
 ---
 
-<div style="margin-top: -2em"></div> <!-- reduce the top margin of h2 -->
+<div style="margin-top: -2em"></div> <!-- remove the top margin of the first h2 -->
 
 ## Bio
 
