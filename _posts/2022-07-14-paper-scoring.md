@@ -108,13 +108,13 @@ tags:
 
 - 段落结构问题。如何识别大小标题（`section`、`subsection` …） 、新段落（例如下图红色剪头指示的新段落）。
 
-  ![image-20220708172917397](https://img.yusanshi.com/upload/20220708192819349699.png)
+  ![](https://img.yusanshi.com/upload/20220708192819349699.png)
 
 - 段落顺序问题。对于多栏文本，除了要遵循先上后下的顺序，还要遵循先左后右的顺序，且先上后下应优先于先左后右。
 
 - 文本归属问题，一段文本到底是属于正文内容还是某个图表的 caption，例如下图中红色框中的文字。
 
-  ![image-20220708171814943](https://img.yusanshi.com/upload/20220708192819707944.png)
+  ![](https://img.yusanshi.com/upload/20220708192819707944.png)
 
 当然以上一些问题解决起来不难，简单写个规则即可，列举出来只是为了说明问题变得“脏”起来。
 
@@ -183,7 +183,7 @@ tags:
 
 如果只有栅格化或扫描的 PDF 文件，亦有直接分析论文页面图片的兜底策略：OCR + layout parser。说来很巧，为了重排论文用于在 Kindle 上阅读，本人曾封装过一个小工具 [reflower](https://github.com/yusanshi/reflower)，它的运行过程就包含了对论文做文字识别和结构解析的操作。下图是用它对一篇论文做了结构解析后的效果（请转头查看😊；每个框的左上角是元素类型和置信度）。
 
-![image-20220710210736786](https://img.yusanshi.com/upload/20220710211337280367.png)
+![](https://img.yusanshi.com/upload/20220710211337280367.png)
 
 有了这种兜底策略，就算没有源文件，我们也能获得一个接近“理想输入”的结果。于是，本调研报告接下来的关注点将正式放在针对“理想输入”做评分上。
 
@@ -201,7 +201,7 @@ tags:
 
 正如其名所示，Grammarly 相对侧重于拼写、语法纠错，这作为基本功能可免费试用，一些更高级的涉及到改写的功能属于会员功能，本人没有会员，因此暂未体验到 :)
 
-![image-20220711163924635](https://img.yusanshi.com/upload/20220711224447198048.png)
+![](https://img.yusanshi.com/upload/20220711224447198048.png)
 
 如图中的 ① 所示，Grammarly 在右上角给出了一个总体的分数，随着你采纳它的修改建议，分数会逐渐提高。具体的赋分机制不清楚。
 
@@ -220,7 +220,7 @@ tags:
 
 Grammarly 的一大优点是它可根据具体的应用场景设定目标（比如这里我就很想点击“Academic”，奈何它是会员功能）。
 
-![image-20220711164556777](https://img.yusanshi.com/upload/20220711224447313060.png)
+![](https://img.yusanshi.com/upload/20220711224447313060.png)
 
 
 
@@ -230,13 +230,13 @@ Grammarly 的一大优点是它可根据具体的应用场景设定目标（比�
 
 QuillBot 是 Grammarly 的同类产品，和 Grammarly 把各个功能叠在一起不同，它把改写、语法检查等功能给分开了（如下图中 ①②③ 所示）。我个人觉得它提供的改写功能比 Grammarly 更好。
 
-![image-20220711154926170](https://img.yusanshi.com/upload/20220711224447206752.png)
+![](https://img.yusanshi.com/upload/20220711224447206752.png)
 
 
 
 #### [批改网](http://www.pigai.org/)
 
-![image-20220711155529844](https://img.yusanshi.com/upload/20220711224448236565.png)
+![](https://img.yusanshi.com/upload/20220711224448236565.png)
 
 相比之下，批改网的用户体验差得多。它在词汇、句子、篇章结构、内容相关四个方面给出了分数和综合分数。
 
@@ -256,11 +256,11 @@ LanguageTool 属于类 Grammarly/QuillBot 工具，是在 GitHub 和 Reddit 搜�
 
 下面是它的试用效果，和 Grammarly/QuillBot 相比，它的语法检查明显要差得多：如下图中所标的 3 类错误它没有发现，Grammarly/QuillBot 则都能正确发现问题。
 
-![image-20220711212013791](https://img.yusanshi.com/upload/20220711224448185730.png)
+![](https://img.yusanshi.com/upload/20220711224448185730.png)
 
 不过作为开源产品，我们可以从其代码简单了解其基本运行原理。
 
-![image-20220711214858055](https://img.yusanshi.com/upload/20220711224448612036.png)
+![](https://img.yusanshi.com/upload/20220711224448612036.png)
 
 呃，看不懂 🥲，先跳过吧 :)
 
