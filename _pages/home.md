@@ -27,4 +27,4 @@ My research focuses on recommendation system.
 
 - [news-recommendation](https://github.com/yusanshi/news-recommendation): Implementations of some methods in news recommendation.
 - [emgithub](https://github.com/yusanshi/emgithub): Embed a file from GitHub repository just like GitHub Gist.
-- [RecHub](https://github.com/yusanshi/RecHub): Implementations of some methods in recommendation featuring GNN training with heterogeneous graphs.
+- [RecHub](https://github.com/yusanshi/RecHub): A library for GNN-based recommendation system featuring heterogeneous GNN training.
