@@ -4,8 +4,6 @@ permalink: /
 classes: wide
 ---
 
-<div style="margin-top: -2em"></div> <!-- remove the top margin of the first h2 -->
-
 I'm Sanshi Lei Yu, or 余磊 (legal name). I graduated from [USTC](https://www.ustc.edu.cn/) (2021: Bachelor of Engineering in CS, 2024: Master of Engineering in CS). Then I work at [ByteDance](https://www.bytedance.com/). My research and work focus on recommendation system.
 
 ## Publications
