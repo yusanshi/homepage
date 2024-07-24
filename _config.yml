@@ -49,7 +49,7 @@ analytics:
 author:
   name: 'Sanshi Lei Yu'
   avatar: '/assets/images/portrait.jpg'
-  bio: 'Postgraduate, CS, USTC'
+  bio: 'USTC => ByteDance'
   links:
     - label: 'Email'
       icon: 'fas fa-fw fa-envelope'
