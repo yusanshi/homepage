@@ -6,15 +6,7 @@ classes: wide
 
 <div style="margin-top: -2em"></div> <!-- remove the top margin of the first h2 -->
 
-## Bio
-
-I'm Sanshi Lei Yu, or 余磊 (legal name), a postgraduate student in [USTC](https://www.ustc.edu.cn/) and [BDAA Lab](https://bigdata.ustc.edu.cn/). My advisor is [Qi Liu](http://staff.ustc.edu.cn/~qiliuql/).
-
-I received my Bachelor of Engineering degree from USTC in 2021.
-
-## Research
-
-My research focuses on recommendation system.
+I'm Sanshi Lei Yu, or 余磊 (legal name). I graduated from [USTC](https://www.ustc.edu.cn/) (2021: Bachelor of Engineering in CS, 2024: Master of Engineering in CS). Then I work at [ByteDance](https://www.bytedance.com/). My research and work focus on recommendation system.
 
 ## Publications
 
